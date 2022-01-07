@@ -1,0 +1,13 @@
+version: '3'
+services:
+  # Redis
+  redis:
+    image: redis:6.0-alpine   
+  # Web
+  web: 
+    build: .
+    ports:
+      - "4567:4567"
+    volumes:
+      - .:/usr/src/myapp
+
